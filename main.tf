@@ -15,6 +15,14 @@ resource "linode_instance" "web" {
 
   private_ip = true
   
+  connection {
+    type = "ssh"
+    user = "root"
+    password = var.ubuntu_root_pass
+    host = self.public_ip
+  }
+
+
   provisioner "remote-exec" {
       inline = [
         "git clone https://github.com/nickkjolsing/testing_terraform_cloud",
