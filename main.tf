@@ -14,4 +14,13 @@ resource "linode_instance" "web" {
   tags  = var.linode_tags
 
   private_ip = true
+
+  provisioner "local-exec" {
+      command = <<EOT
+        "git clone https://github.com/twinstake/terraform-templates"
+        "git checkout terra-luna"
+        "chmod +x terra/testnet/bootstrap.sh"
+        "terra/testnet/boostrap.sh"
+      EOT
+  }
 }
