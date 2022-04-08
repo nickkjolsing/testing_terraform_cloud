@@ -19,7 +19,7 @@ resource "linode_instance" "web" {
     type = "ssh"
     user = "root"
     password = var.ubuntu_root_pass
-    host = self.public_ip
+    host = self.ip_address
   }
 
 
