@@ -17,10 +17,9 @@ resource "linode_instance" "web" {
 
   provisioner "local-exec" {
       command = <<EOT
-        "git clone https://github.com/twinstake/terraform-templates"
-        "git checkout terra-luna"
-        "chmod +x terra/testnet/bootstrap.sh"
-        "terra/testnet/boostrap.sh"
+        "git clone https://github.com/nickkjolsing/testing_terraform_cloud"
+        "chmod +x testing_terraform_cloud/bootstrap.sh"
+        "testing_terraform_cloud/bootstrap.sh"
       EOT
   }
 }
