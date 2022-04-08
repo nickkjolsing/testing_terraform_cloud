@@ -16,10 +16,11 @@ resource "linode_instance" "web" {
   private_ip = true
 
   provisioner "local-exec" {
+      interpreter = ["/bin/bash", "-c"]
       command = <<EOT
-        "git clone https://github.com/nickkjolsing/testing_terraform_cloud"
-        "chmod +x testing_terraform_cloud/bootstrap.sh"
-        "testing_terraform_cloud/bootstrap.sh"
+        exec "git clone https://github.com/nickkjolsing/testing_terraform_cloud"
+        exec "chmod +x testing_terraform_cloud/bootstrap.sh"
+        exec "testing_terraform_cloud/bootstrap.sh"
       EOT
   }
 }
