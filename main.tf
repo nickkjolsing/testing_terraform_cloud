@@ -14,12 +14,12 @@ resource "linode_instance" "web" {
   tags  = var.linode_tags
 
   private_ip = true
-
-  provisioner "local-exec" {
-      command = <<EOT
-        git clone https://github.com/nickkjolsing/testing_terraform_cloud
-        chmod +x testing_terraform_cloud/bootstrap.sh
-        testing_terraform_cloud/bootstrap.sh
-      EOT
+  
+  provisioner "remote-exec" {
+      inline = [
+        "git clone https://github.com/nickkjolsing/testing_terraform_cloud",
+        "chmod +x testing_terraform_cloud/bootstrap.sh",
+        "testing_terraform_cloud/bootstrap.sh"
+      ]
   }
 }
