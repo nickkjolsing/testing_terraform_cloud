@@ -127,17 +127,8 @@ popd
 # everything is in place ..
 # lighting up daemons
 sudo systemctl daemon-reload
-#sudo systemctl enable terrad 
-case "${CHAIN_ID}" in 
-    "bombay-12")
-	echo "terracli-server needs to be enabled in [api] section"
-	;;
-    *)
-	echo "terracli-server needs to be enabled in [api] section"
-#	sudo systemctl enable terracli-server
-	;;
-esac
+sudo systemctl enable terrad.service 
 
-echo "Remember to hand-edit /etc/stackdriver/collectd.conf Interval for non-prod boxes"
-# and machine is ready to rock&roll.
-#sudo reboot
+echo "Running Terra service..."
+sudo systemctl start terrad.service
+
