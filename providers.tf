@@ -3,7 +3,7 @@ terraform {
     organization = "twinstake"
 
     workspaces {
-      name = "linode-terra-testnet"
+      name = "terra-testnet-linode"
     }
   }
 
