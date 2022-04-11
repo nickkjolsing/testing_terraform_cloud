@@ -123,53 +123,7 @@ sed 's/minimum-gas-prices = \"\"/minimum-gas-prices=\"0.01133uluna,0.104938usdr,
 
 
 popd
-#case "${CHAIN_ID}" in 
-#    "bombay-12")
-#	echo "skipping terracli as it isn't installed"
-#	;;
-#    *)
-#	terracli config node http://127.0.0.1:26657
-#	terracli config chain-id ${CHAIN_ID}
-#	;;
-#esac
 
-
-
-# cd ${$HOME}/data/terrad 
-# case "${CHAIN_ID}" in 
-#     "columbus-5") 
-#         echo "Columbia not supported yet"
-# #        syncfile=$( curl https://terra.quicksync.io/sync.json|jq -r ".[]| select(.network==\"pruned\")|.file" |grep columbus-4)
-# #        echo "syncfile = ${syncfile}"
-# #        aria2c  -x5 https://get.quicksync.io/${syncfile}
-# #        curl -O  https://get.quicksync.io/${syncfile}.checksum
-# #        hash=$(curl -s https://get.quicksync.io/${syncfile}.hash)
-# #        curl -s https://lcd.terra.dev/txs/${hash}|jq -r '.tx.value.memo'|sha512sum -c
-# #        ${HOME}/validator/checksum.sh ${syncfile}
-# #        tar -I lz4 -xf columbus-5-pruned.20220320.0410.tar.lz4
-
-# #        echo "exit code $?"
-# #        echo "waiting..."
-# #        read
-
-# 	mv ${HOME}/.terra/data ${HOME}/.terra/data.orig
-# 	cp ${HOME}/.terra/data.orig/priv_validator_state.json ${HOME}/.terra/data/
-#         ;;
-#     "bombay-12")
-# #	mkdir /mnt/disks/data/terrad/data
-# 	echo "${CHAIN_ID} no syncing available"
-# 	mv ${HOME}/.terra/data ${HOME}/.terra/data.orig
-# 	cp ${HOME}/.terra/data.orig/priv_validator_state.json ${HOME}/.terra/data/
-# 	;;
-#     *)
-#         echo "${CHAIN_ID} not known"
-#         exit 1
-#     ;;  
-# esac
-# popd
-
-
-#mv ${HOME}/.terrad/data/priv_validator_state.json /mnt/disks/data/terrad/data
 # everything is in place ..
 # lighting up daemons
 sudo systemctl daemon-reload
