@@ -36,9 +36,9 @@ fi
 sudo mv go /usr/local
 
 # set up paths for next time
-# echo "export PATH=$PATH:$(go env GOPATH)/bin" >> /etc/profile
-# echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
-# source /etc/profile
+echo "export PATH=$PATH:$(go env GOPATH)/bin" >> /etc/profile
+echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
+source /etc/profile
 mv validator/.bashrc ${HOME}
 chmod 755 ${HOME}/.bashrc
 export GOPATH=${HOME}/go
