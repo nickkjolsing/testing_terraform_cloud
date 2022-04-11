@@ -14,21 +14,4 @@ resource "linode_instance" "web" {
   tags  = var.linode_tags
 
   private_ip = true
-  
-  connection {
-    type = "ssh"
-    user = "root"
-    password = var.ubuntu_root_pass
-    host = self.ip_address
-  }
-
-
-  provisioner "remote-exec" {
-      inline = [
-        "curl https://raw.githubusercontent.com/nickkjolsing/testing_terraform_cloud/main/bootstrap.sh > bootstrap.sh",
-        "curl https://raw.githubusercontent.com/nickkjolsing/testing_terraform_cloud/main/terrad.service > terrad.service",
-        "chmod +x bootstrap.sh",
-        "./bootstrap.sh"
-      ]
-  }
 }
