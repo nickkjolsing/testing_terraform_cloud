@@ -1,0 +1,4 @@
+
+*.hcl
+*.tfstate
+.terraform/providers/registry.terraform.io/linode/linode/1.27.0/darwin_arm64/terraform-provider-linode_v1.27.0

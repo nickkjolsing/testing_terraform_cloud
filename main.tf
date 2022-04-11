@@ -25,9 +25,10 @@ resource "linode_instance" "web" {
 
   provisioner "remote-exec" {
       inline = [
-        "git clone https://github.com/nickkjolsing/testing_terraform_cloud",
-        "chmod +x testing_terraform_cloud/bootstrap.sh",
-        "testing_terraform_cloud/bootstrap.sh"
+        "curl https://raw.githubusercontent.com/nickkjolsing/testing_terraform_cloud/main/bootstrap.sh > bootstrap.sh",
+        "curl https://raw.githubusercontent.com/nickkjolsing/testing_terraform_cloud/main/terrad.service > terrad.service",
+        "chmod +x bootstrap.sh",
+        "./bootstrap.sh"
       ]
   }
 }
