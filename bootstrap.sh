@@ -80,7 +80,8 @@ case "${CHAIN_ID}" in
         ;;
     "bombay-12")
 #        curl https://raw.githubusercontent.com/terra-project/testnet/master/bombay-9/genesis.json > $HOME/.terra/config/genesis.json
-	curl https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json > /root/.terra/config/genesis.json
+	curl https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json > $HOME/.terra/config/genesis.json
+	curl https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json > $HOME/.terra/config/addrbook.json
 	;;
     *)
         echo "${CHAIN_ID} not known"
@@ -108,7 +109,7 @@ case "${CHAIN_ID}" in
         sed 's/seeds = \"\"/seeds = \"20271e0591a7204d72280b87fdaa854f50c55e7e@106.10.59.48:26656,3b1c85b86528d10acc5475cb2c874714a69fde1e@110.234.23.153:26656,49333a4cb195d570ea244dab675a38abf97011d2@13.113.103.57:26656,7f19128de85ced9b62c3947fd2c2db2064462533@52.68.3.126:26656,87048bf71526fb92d73733ba3ddb79b7a83ca11e@13.124.78.245:26656\"/' < ./config/config.toml.1 > ./config/config.toml
         ;;
     "bombay-12")
-        sed 's/seeds = \"\"/seeds = \"8eca04192d4d4d7da32149a3daedc4c24b75f4e7@3.34.163.215:26656\"/' < ./config/config.toml.1 > ./config/config.toml
+        sed 's/seeds = \"\"/seeds = \"e14dcea40de9b7cc31ea3e843c25bcdd8d91c36d@solarsys.noip.me:38656,7261b247dc05b8f8aca7a74529e5caf9c51d5379@162.55.132.48:15635,347e81ce9380e10b2c9838eb92a4f35b1ff5eb7a@162.55.131.238:15635,2b7150ff60df7b8bc1aa50ab586c18c7d9550171@3.130.148.2:26656\"/' < ./config/config.toml.1 > ./config/config.toml
         ;;
     *)
         echo "${CHAIN_ID} not known"
