@@ -29,3 +29,7 @@ variable "linode_tags" {
 variable "linode_group" {
   description = "Group that node will be a part of"
 }
+
+variable "hetzner_token" {
+  description = "Hetzner API Token"
+}
