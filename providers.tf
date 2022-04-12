@@ -14,7 +14,7 @@
 #   }
 # }
 
-hcloud {
+terraform {
   cloud {
     organization = "twinstake"
 
